@@ -6,7 +6,7 @@ metadata:
   labels:
     app: rollouts-demo
 spec:
-  replicas: 5
+  replicas: 3
   revisionHistoryLimit: 3
   selector:
     matchLabels:
@@ -23,14 +23,6 @@ spec:
             - name: http
               containerPort: 80
               protocol: TCP
-          livenessProbe:
-            httpGet:
-              path: /
-              port: http
-          readinessProbe:
-            httpGet:
-              path: /
-              port: http
   strategy:
     blueGreen:
       activeService: rollouts-demo
