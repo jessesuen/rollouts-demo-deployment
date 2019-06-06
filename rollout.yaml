@@ -25,7 +25,7 @@ spec:
               protocol: TCP
   strategy:
     blueGreen:
-      autoPromotionEnabled: false
+      #autoPromotionEnabled: false
       activeService: rollouts-demo
       previewService: rollouts-demo-preview
 #     canary:
