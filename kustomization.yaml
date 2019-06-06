@@ -10,4 +10,4 @@ resources:
 
 images:
 - name: alexmt/rollouts-demo
-  newTag: yellow
+  newTag: blue
