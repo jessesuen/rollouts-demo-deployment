@@ -28,6 +28,7 @@ spec:
       #autoPromotionEnabled: false
       activeService: rollouts-demo
       previewService: rollouts-demo-preview
+      scaleDownDelaySeconds: 10
 #     canary:
 #       steps:
 #       - setWeight: 20
