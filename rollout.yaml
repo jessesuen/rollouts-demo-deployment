@@ -24,12 +24,12 @@ spec:
               containerPort: 80
               protocol: TCP
   strategy:
-    blueGreen:
-      #autoPromotionEnabled: false
-      activeService: rollouts-demo
-      previewService: rollouts-demo-preview
-      scaleDownDelaySeconds: 10
-#     canary:
-#       steps:
-#       - setWeight: 20
-#       - pause: {}
+#     blueGreen:
+#       #autoPromotionEnabled: false
+#       activeService: rollouts-demo
+#       previewService: rollouts-demo-preview
+#       scaleDownDelaySeconds: 10
+    canary:
+      steps:
+      - setWeight: 20
+      - pause: {}
