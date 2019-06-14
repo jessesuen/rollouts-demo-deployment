@@ -2,34 +2,29 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
-  name: rollouts-demo
+  name: canary-demo
   labels:
-    app: rollouts-demo
+    app: canary-demo
 spec:
-  replicas: 3
+  replicas: 4
   revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: rollouts-demo
+      app: canary-demo
   template:
     metadata:
       labels:
-        app: rollouts-demo
+        app: canary-demo
     spec:
       containers:
-        - name: rollouts-demo
+        - name: canary-demo
           image: "alexmt/rollouts-demo:latest"
           ports:
             - name: http
               containerPort: 80
               protocol: TCP
   strategy:
-#     blueGreen:
-#       #autoPromotionEnabled: false
-#       activeService: rollouts-demo
-#       previewService: rollouts-demo-preview
-#       scaleDownDelaySeconds: 10
     canary:
       steps:
-      - setWeight: 20
+      - setWeight: 25
       - pause: {}

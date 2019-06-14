@@ -2,11 +2,12 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-- rollout.yaml
-- service.yaml
-#- ingress.yaml
-- preview-service.yaml
-- post-sync-job.yaml
+#- post-sync-job.yaml
+- bluegreen-rollout.yaml
+- bluegreen-service.yaml
+- bluegreen-service-preview.yaml
+- canary-rollout.yaml
+- canary-service.yaml
 
 images:
 - name: alexmt/rollouts-demo
