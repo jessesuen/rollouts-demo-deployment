@@ -6,7 +6,6 @@ metadata:
   labels:
     app: bluegreen-demo
 spec:
-  type: LoadBalancer
   ports:
     - port: 80
       targetPort: http
