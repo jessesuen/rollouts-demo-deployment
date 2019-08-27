@@ -17,13 +17,14 @@ spec:
     spec:
       containers:
       - name: canary-demo
-        image: alexmt/rollouts-demo:latest
+        image: alexmt/rollouts-demo:blue
         ports:
         - name: http
           containerPort: 80
           protocol: TCP
   strategy:
     canary:
+      canaryService: canary-demo-preview
       steps:
       - setWeight: 25
       - pause: {}
