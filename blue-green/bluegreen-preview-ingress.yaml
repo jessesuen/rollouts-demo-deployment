@@ -1,14 +1,14 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: bluegreen-demo
+  name: bluegreen-demo-preview
   annotations:
     ingress.kubernetes.io/proxy-body-size: 100M
     kubernetes.io/ingress.class: "nginx"
     ingress.kubernetes.io/app-root: "/"
 spec:
   rules:
-  - host: rollouts-demo.apps.argoproj.io
+  - host: rollouts-blue-green-preview.apps.argoproj.io
     http:
       paths:
       - path: /

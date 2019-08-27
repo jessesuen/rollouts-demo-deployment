@@ -18,13 +18,13 @@ spec:
     spec:
       containers:
         - name: bluegreen-demo
-          image: "alexmt/rollouts-demo:latest"
+          image: alexmt/rollouts-demo:latest
           ports:
             - name: http
               containerPort: 80
               protocol: TCP
   strategy:
     blueGreen:
-      #autoPromotionEnabled: false
+      autoPromotionEnabled: false
       activeService: bluegreen-demo
       previewService: bluegreen-demo-preview
